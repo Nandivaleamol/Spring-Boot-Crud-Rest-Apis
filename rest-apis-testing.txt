@@ -1,0 +1,88 @@
+Method POST:
+        http://localhost:8080/api/users/
+            {
+                "name":"Rishikesh",
+                "address":"Pune",
+                "pincode":"404304",
+                "state":"Maharashtra"
+            }
+
+Method GET: single user
+        http://localhost:8080/api/users/5
+            response: if success:
+                {
+                    "id": 1,
+                    "name": "Amol",
+                    "address": "Pune",
+                    "pincode": "413202",
+                    "state": "Maharashtra",
+                    "row_creation_timestamp": "2022-12-21T07:29:43.117+00:00"
+                }
+            response: if failed:
+                {
+                    "message": "User not found with Id : 4",
+                    "success": false
+                }
+
+Method GET: all users
+        http://localhost:8080/api/users/
+            response:
+            [
+                {
+                    "id": 1,
+                    "name": "Amol",
+                    "address": "Pune",
+                    "pincode": "413202",
+                    "state": "Maharashtra",
+                    "row_creation_timestamp": "2022-12-21T07:29:43.117+00:00"
+                },
+                {
+                    "id": 2,
+                    "name": "Rohan",
+                    "address": "Pune",
+                    "pincode": "413202",
+                    "state": "Maharashtra",
+                    "row_creation_timestamp": "2022-12-21T07:30:07.363+00:00"
+                },
+                {
+                    "id": 3,
+                    "name": "Suraj",
+                    "address": "Mumbai",
+                    "pincode": "403034",
+                    "state": "Maharashtra",
+                    "row_creation_timestamp": "2022-12-21T07:30:32.687+00:00"
+                },
+                {
+                    "id": 5,
+                    "name": "Rishi",
+                    "address": "Pune",
+                    "pincode": "404304",
+                    "state": "Maharashtra",
+                    "row_creation_timestamp": "2022-12-21T07:31:52.674+00:00"
+                }
+            ]
+
+Method PUT:
+        http://localhost:8080/api/users/5
+
+        {
+            "name":"Rishi",
+            "address":"Pune",
+            "pincode":"404304",
+            "state":"Maharashtra"
+        }
+
+Method DELETE: delete user by userId
+        http://localhost:8080/api/users/4
+
+        output:-if success
+            {
+                "message": "User deleted successfully!!",
+                "success": true
+            }
+
+        output: if failed
+            {
+                "message": "User  not found with Id : 4",
+                "success": false
+            }
